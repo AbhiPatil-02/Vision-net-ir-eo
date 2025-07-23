@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Upload EO/IR File</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body class="upload-page">
+
+  <header class="main-header upload-header">
+    <button class="home-icon" onclick="location.href='/'">🏠</button>
+    <h1>Upload EO/IR File</h1>
+  </header>
+
+  <main class="upload-left-wrapper">
+    <form class="floating-upload-box" id="uploadForm" action="{{ url_for('upload_file') }}" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" id="fileInput" accept="image/*,video/*" required />
+      <img id="imagePreview" class="image-preview" style="display: none;" />
+      <video id="videoPreview" class="image-preview" controls muted style="display: none;"></video>
+      <div id="resultBox" class="result-box" style="display: none;">🔍 Ready to submit</div>
+      <button id="submitButton" class="submit-btn" style="display: none;">Submit</button>
+    </form>
+  </main>
+
+  <script>
+    const fileInput = document.getElementById('fileInput');
+    const imagePreview = document.getElementById('imagePreview');
+    const videoPreview = document.getElementById('videoPreview');
+    const resultBox = document.getElementById('resultBox');
+    const submitButton = document.getElementById('submitButton');
+
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files[0];
+      if (!file) return;
+
+      const blobURL = URL.createObjectURL(file);
+      const fileType = file.type;
+
+      imagePreview.style.display = 'none';
+      videoPreview.style.display = 'none';
+
+      if (fileType.startsWith('image/')) {
+        imagePreview.src = blobURL;
+        imagePreview.style.display = 'block';
+      } else if (fileType.startsWith('video/')) {
+        videoPreview.src = blobURL;
+        videoPreview.style.display = 'block';
+        videoPreview.load();
+      }
+
+      resultBox.style.display = 'block';
+      submitButton.style.display = 'inline-block';
+    });
+  </script>
+
+</body>
+</html>

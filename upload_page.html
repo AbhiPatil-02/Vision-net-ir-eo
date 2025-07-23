@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Upload EO/IR File</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="upload-page">
+
+  <!-- Header -->
+  <header class="main-header upload-header">
+    <button class="home-icon" onclick="location.href='index.html'">🏠</button>
+    <h1>Upload EO/IR File</h1>
+  </header>
+
+  <!-- Upload Section -->
+  <main class="upload-left-wrapper">
+    <div class="floating-upload-box">
+      <input type="file" id="fileInput" accept="image/*,video/*" />
+
+      <!-- Image Preview -->
+      <img id="imagePreview" src="#" alt="Image Preview" class="image-preview" style="display: none;" />
+
+      <!-- Video Preview -->
+      <video id="videoPreview" class="image-preview" controls muted style="display: none; max-height: 300px; border-radius: 8px; box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);"></video>
+
+      <!-- Result Box -->
+      <div id="resultBox" class="result-box" style="display: none;">
+        🔍 Ready to submit
+      </div>
+
+      <!-- Submit Button -->
+      <button id="submitButton" style="display: none; margin-top: 15px; padding: 10px 20px; background-color: #0a49b5; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">
+        Submit
+      </button>
+    </div>
+  </main>
+
+  <!-- JavaScript -->
+  <script>
+    const fileInput = document.getElementById('fileInput');
+    const imagePreview = document.getElementById('imagePreview');
+    const videoPreview = document.getElementById('videoPreview');
+    const resultBox = document.getElementById('resultBox');
+    const submitButton = document.getElementById('submitButton');
+
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files[0];
+      if (!file) return;
+
+      const fileType = file.type;
+
+      // Reset previous previews
+      imagePreview.style.display = 'none';
+      videoPreview.style.display = 'none';
+      imagePreview.src = '';
+      videoPreview.src = '';
+
+      const blobURL = URL.createObjectURL(file);
+
+      if (fileType.startsWith('image/')) {
+        imagePreview.src = blobURL;
+        imagePreview.style.display = 'block';
+      } else if (fileType.startsWith('video/')) {
+        videoPreview.src = blobURL;
+        videoPreview.style.display = 'block';
+        videoPreview.load();
+      }
+
+      resultBox.style.display = 'block';
+      submitButton.style.display = 'inline-block';
+    });
+
+    submitButton.addEventListener('click', () => {
+      alert('Submit clicked! Add your backend logic here.');
+    });
+  </script>
+
+</body>
+</html>

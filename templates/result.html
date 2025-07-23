@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detection Results</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="results-page">
+
+  <!-- Header -->
+  <header class="main-header">
+    <button class="home-icon" onclick="location.href='{{ url_for('upload_file') }}'">🏠</button>
+    <h1>Detection Results</h1>
+  </header>
+
+  <!-- Results Gallery -->
+  <main class="results-page">
+    {% if images %}
+      <div class="results-grid">
+        {% for image in images %}
+          <div class="result-item">
+            <img src="{{ url_for('serve_prediction_image', folder=folder, filename=image) }}" alt="Prediction" />
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No results to display.</p>
+    {% endif %}
+  </main>
+
+</body>
+</html>

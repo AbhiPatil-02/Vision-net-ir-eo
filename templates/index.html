@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EO/IR Image Classifications</title>
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="main-header">
+    <h1>EO/IR Image Classifications</h1>
+  </header>
+
+  <!-- Main Content -->
+  <main class="content" style="background: url('/static/images/back.jpg') no-repeat left bottom; background-size: cover;">
+
+    <section class="info-section">
+      <div class="info-box">       
+  <h2>📌 About the Project</h2>
+  <p>
+    This project enables rapid classification of Electro-Optical (EO) and Infrared (IR) imagery for military and surveillance use. Leveraging pre-trained object detection models, the system accurately identifies key targets such as personnel, vehicles, armored units, aircraft, and weapons — supporting real-time situational awareness in challenging environments.
+  </p>
+</div>
+
+
+      <div class="info-box">
+  <h2>🎯 Objective</h2>
+  <p>
+    To support critical decision-making in defense environments by improving the interpretation of EO/IR imagery, particularly under adverse conditions such as:
+  </p>
+  <ul>
+    <li>🌙 Low light or night operations</li>
+    <li>🌲 Camouflaged terrains</li>
+    <li>🌫️ Visual obstructions like fog,<br> smoke, or haze</li>
+  </ul>
+</div>
+
+    </section>
+  </main>
+
+  <!-- Get Started Button -->
+    <div class="bottom-button">
+      <button onclick="location.href='{{ url_for('upload_file') }}'">🚀 Get Started</button>
+    </div>
+
+</body>
+</html>
