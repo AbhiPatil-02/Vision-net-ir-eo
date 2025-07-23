@@ -8,11 +8,12 @@
 - [Features](#features)
 - [How to Run](#how-to-run)
 - [Usage](#usage)
-- [Contributing](##contributing)
+- [Contributing](#contributing)
 - [Contact](#contact)
 
 ---
 
+<a name="project-overview"></a>
 ## 📁 Project Overview
 This project provides a rapid classification system for **Electro-Optical (EO)** and **Infrared (IR)** imagery, primarily designed for military and surveillance applications. Leveraging a fine-tuned **YOLOv8** object detection model, the system accurately identifies key targets such as:
 
@@ -26,6 +27,7 @@ The application includes a clean, user-friendly web interface built with **Strea
 
 ---
 
+<a name="Objective"></a>
 ## 🎯 Objective
 The primary goal is to enhance **real-time situational awareness** and support **critical decision-making** in defense and surveillance environments. It focuses on EO/IR image interpretation under challenging conditions such as:
 
@@ -34,7 +36,7 @@ The primary goal is to enhance **real-time situational awareness** and support *
 - 🌫️ Visual obstructions (fog, smoke, haze)
 
 ---
-
+<a name="features"></a>
 ## ✨ Features
 
 - 🔍 **Image Classification**
@@ -54,6 +56,7 @@ The primary goal is to enhance **real-time situational awareness** and support *
 
 ---
 
+<a name="how-to-run"></a>
 ## 🛠️ How to Run
 
 ### 📥 1. Clone the Repository
@@ -76,6 +79,7 @@ python3 app.py
 
 ---
 
+<a name="usage"></a>
 ## 🧪 Usage
 1. Click “Choose an image or video file” in the UI to upload a file (`.jpg`, `.jpeg`, `.png`, `.mp4`, `.avi`, `.mov`, `.webm`).
 2. A preview of the image or video will appear.
@@ -84,6 +88,7 @@ python3 app.py
 
 ---
 
+<a name="contributing"></a>
 ## 🤝 Contributing
 Contributions are welcome! To contribute:
 
@@ -105,6 +110,7 @@ git push origin feature/your-feature-name
 
 ---
 
+<a name="contact"></a>
 ## 📬 Contact
 For questions, issues, or collaborations, feel free to:
 
