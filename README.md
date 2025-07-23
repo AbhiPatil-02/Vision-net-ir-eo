@@ -8,7 +8,7 @@
 - [Features](#features)
 - [How to Run](#how-to-run)
 - [Usage](#usage)
-- [Contributing](#contributing)
+- [Contributing](##contributing)
 - [Contact](#contact)
 
 ---
